@@ -1,8 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sandbox", "Sandbox", "{4D9F1F6E-F4A6-4604-A346-74169FB7A801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmSandbox.Mvc", "Sandbox\AcmSandbox.Mvc\AcmSandbox.Mvc.csproj", "{B1E33DE4-3CE7-4D6D-B0E1-CAF7DC109FD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationContextManaging", "ApplicationContextManaging\ApplicationContextManaging.csproj", "{08A2A36C-2259-4FF1-A4D8-0346C98BD9CD}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1E33DE4-3CE7-4D6D-B0E1-CAF7DC109FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E33DE4-3CE7-4D6D-B0E1-CAF7DC109FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E33DE4-3CE7-4D6D-B0E1-CAF7DC109FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E33DE4-3CE7-4D6D-B0E1-CAF7DC109FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A2A36C-2259-4FF1-A4D8-0346C98BD9CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A2A36C-2259-4FF1-A4D8-0346C98BD9CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A2A36C-2259-4FF1-A4D8-0346C98BD9CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A2A36C-2259-4FF1-A4D8-0346C98BD9CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B1E33DE4-3CE7-4D6D-B0E1-CAF7DC109FD0} = {4D9F1F6E-F4A6-4604-A346-74169FB7A801}
 	EndGlobalSection
 EndGlobal

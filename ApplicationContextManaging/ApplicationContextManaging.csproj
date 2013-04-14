@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08A2A36C-2259-4FF1-A4D8-0346C98BD9CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeFiction.Acm.ApplicationContextManaging</RootNamespace>
+    <AssemblyName>CodeFiction.Acm.ApplicationContextManaging</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="CfCommerce.Presentation.AspNetCore">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CfCommerce.Presentation.AspNetCore.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Common.Configuration">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Common.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Common.ExceptionHandling">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Common.ExceptionHandling.Logging">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Common.Exceptions">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Common.Utilities">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Library.Core">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Library.CoreContracts">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.CoreContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Library.DataContracts">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.DataContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeFiction.Stack.Library.ServiceContracts">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.ServiceContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationContextManager.cs" />
+    <Compile Include="Contracts\IAcmControllerFactory.cs" />
+    <Compile Include="Contracts\IApplicationContextManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\DefaultAcmControllerFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
