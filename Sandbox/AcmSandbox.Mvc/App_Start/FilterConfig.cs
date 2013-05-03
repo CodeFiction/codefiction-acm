@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace AcmSandbox.Mvc
+namespace AcmSandbox.Mvc.App_Start
 {
     public class FilterConfig
     {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AcmSandbox.Mvc")]
+[assembly: AssemblyTitle("CFCommerce")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AcmSandbox.Mvc")]
+[assembly: AssemblyProduct("CFCommerce")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f32636d1-34e6-45ba-bb24-667b296d6f65")]
+[assembly: Guid("c7245f53-e22c-4957-a791-4caf44e437b9")]
 
 // Version information for an assembly consists of the following four values:
 //
