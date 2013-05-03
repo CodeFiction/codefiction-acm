@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using CodeFiction.Acm.ApplicationContextManaging;
-using CodeFiction.Acm.ApplicationContextManaging.Contracts;
 using CodeFiction.Acm.ApplicationContextManaging.Web;
+using CodeFiction.Acm.Contracts;
+using CodeFiction.Stack.Library.Core.Castle;
 using CodeFiction.Stack.Library.Core.Initializers;
 using CodeFiction.Stack.Library.CoreContracts;
+using DummyServices;
 using IDependencyResolver = CodeFiction.Stack.Library.CoreContracts.IDependencyResolver;
 
 namespace AcmSandbox.Mvc
@@ -25,7 +22,9 @@ namespace AcmSandbox.Mvc
         {
             _bootstrapper = Bootstrapper.Create();
             _bootstrapper.RegisterComponent(resolver => resolver.Register<IApplicationContextManager, ApplicationContextManager>(InstanceMode.Singleton));
-            _bootstrapper.RegisterComponent(resolver => resolver.Register<IAcmControllerFactory, DefaultAcmControllerFactory>());
+            _bootstrapper.RegisterComponent(resolver => resolver.Register<IAcmControllerFactory, AcmControllerFactory>());
+            _bootstrapper.RegisterComponent(resolver => resolver.Register<IStoryConfiguration, DummyStoryConfiguration>());
+            _bootstrapper.RegisterComponent(resolver => resolver.RegisterInstance(typeof(ControllerBuilder), ControllerBuilder.Current, typeof(StrategyInterceptor)));
         }
 
         public IApplicationContextManager ApplicationContextManager
@@ -35,7 +34,7 @@ namespace AcmSandbox.Mvc
                 dynamic dyn = new AccessPrivateWrapper(_bootstrapper);
 
                 IDependencyResolver dependencyResolver = dyn._resolver as IDependencyResolver;
-                return  dependencyResolver.Resolve<IApplicationContextManager>();
+                return dependencyResolver.Resolve<IApplicationContextManager>();
             }
         }
 

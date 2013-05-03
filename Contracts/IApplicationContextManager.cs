@@ -1,4 +1,4 @@
-namespace CodeFiction.Acm.ApplicationContextManaging.Contracts
+namespace CodeFiction.Acm.Contracts
 {
     public interface IApplicationContextManager
     {

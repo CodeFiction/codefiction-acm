@@ -194,6 +194,14 @@
       <Project>{08a2a36c-2259-4ff1-a4d8-0346c98bd9cd}</Project>
       <Name>ApplicationContextManaging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Contracts\Contracts.csproj">
+      <Project>{8D67346E-E642-4239-9D6C-BBCCED964DE1}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DummyServices\DummyServices.csproj">
+      <Project>{BD868807-7921-449A-A2A2-A09E643596C7}</Project>
+      <Name>DummyServices</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
