@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
+﻿using System.Dynamic;
 using System.Linq;
 using System.Reflection;
-using System.Web;
 
-namespace AcmSandbox.Mvc
+namespace CodeFiction.Acm.ApplicationContextManaging
 {
     /// <summary>
     /// A 10 minute wrapper to access private members, havn't tested in detail.

@@ -1,16 +1,19 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Linq;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+
 using AcmSandbox.Mvc.App_Start;
 
 using CodeFiction.Acm.ApplicationContextManaging;
 using CodeFiction.Acm.ApplicationContextManaging.Web;
 using CodeFiction.Acm.Contracts;
-using CodeFiction.Stack.Library.Core.Castle;
 using CodeFiction.Stack.Library.Core.Initializers;
 using CodeFiction.Stack.Library.CoreContracts;
 
 using DummyServices;
+
 using IDependencyResolver = CodeFiction.Stack.Library.CoreContracts.IDependencyResolver;
 
 namespace AcmSandbox.Mvc
@@ -19,26 +22,16 @@ namespace AcmSandbox.Mvc
     // visit http://go.microsoft.com/?LinkId=9394801
     public class MvcApplication : System.Web.HttpApplication
     {
-        private static Bootstrapper _bootstrapper;
+        private static readonly Bootstrapper Bootstrapper;
 
         static MvcApplication()
         {
-            _bootstrapper = Bootstrapper.Create();
-            _bootstrapper.RegisterComponent(resolver => resolver.Register<IApplicationContextManager, ApplicationContextManager>(InstanceMode.Singleton));
-            _bootstrapper.RegisterComponent(resolver => resolver.Register<IAcmControllerFactory, AcmControllerFactory>());
-            _bootstrapper.RegisterComponent(resolver => resolver.Register<IStoryConfiguration, DummyStoryConfiguration>());
-            _bootstrapper.RegisterComponent(resolver => resolver.RegisterInstance(typeof(ControllerBuilder), ControllerBuilder.Current, typeof(StrategyInterceptor)));
-        }
+            Bootstrapper = Bootstrapper.Create();
 
-        public IApplicationContextManager ApplicationContextManager
-        {
-            get
-            {
-                dynamic dyn = new AccessPrivateWrapper(_bootstrapper);
-
-                IDependencyResolver dependencyResolver = dyn._resolver as IDependencyResolver;
-                return dependencyResolver.Resolve<IApplicationContextManager>();
-            }
+            Bootstrapper.RegisterComponent(resolver => resolver.Register<IApplicationContextManager, ApplicationContextManager>(InstanceMode.Singleton));
+            Bootstrapper.RegisterComponent(resolver => resolver.Register<IAcmControllerFactory, AcmControllerFactory>());
+            Bootstrapper.RegisterComponent(resolver => resolver.Register<IStoryConfiguration, DummyStoryConfiguration>());
+            Bootstrapper.RegisterComponent(resolver => resolver.RegisterInstance(typeof(ControllerBuilder), ControllerBuilder.Current));
         }
 
         protected void Application_Start()
@@ -48,11 +41,34 @@ namespace AcmSandbox.Mvc
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            IDependencyResolver dependencyResolver = Bootstrapper.DependencyResolver;
+
+            ControllerBuilder.Current.SetControllerFactory(new AcmControllerFactory(dependencyResolver, dependencyResolver.Resolve<IApplicationContextManager>()));
+
+            RegisterControllers();
+        }
+
+        private void RegisterControllers()
+        {
+            var type = typeof (IController);
+            var types = AppDomain.CurrentDomain.GetAssemblies().ToList()
+                .SelectMany(s => s.GetTypes())
+                .Where(type.IsAssignableFrom).ToList();
+
+            IDependencyResolver dependencyResolver = Bootstrapper.DependencyResolver;
+
+            foreach (var controllerType in types)
+            {
+                Type controller = controllerType;
+
+                dependencyResolver.Register(typeof (IController), controller, InstanceMode.Transient, controller.Name);
+            }
         }
 
         protected void Application_BeginRequest()
         {
-            IApplicationContextManager applicationContextManager = ApplicationContextManager;
+
         }
 
         protected void Application_AuthenticateRequest()
@@ -72,7 +88,7 @@ namespace AcmSandbox.Mvc
 
         protected void Application_Error()
         {
-
+            Exception lastError = Context.Server.GetLastError();
         }
 
         protected void Session_Start()

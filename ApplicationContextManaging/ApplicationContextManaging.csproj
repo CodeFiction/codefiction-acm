@@ -30,62 +30,81 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Windsor">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Castle.Windsor.dll</HintPath>
+    <Reference Include="Castle.Windsor, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="CfCommerce.Presentation.AspNetCore">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CfCommerce.Presentation.AspNetCore.dll</HintPath>
+    <Reference Include="CfCommerce.Presentation.AspNetCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CfCommerce.Presentation.AspNetCore.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Common.Configuration">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Common.Configuration.dll</HintPath>
+    <Reference Include="CodeFiction.Common.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Common.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Common.ExceptionHandling">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.ExceptionHandling.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Common.ExceptionHandling, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Common.ExceptionHandling.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Common.ExceptionHandling.Logging">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.ExceptionHandling.Logging.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Common.ExceptionHandling.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Common.ExceptionHandling.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Common.Exceptions">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.Exceptions.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Common.Exceptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Common.Exceptions.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Common.Utilities">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Common.Utilities.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Common.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Common.Utilities.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Library.Core">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.Core.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Library.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Library.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Library.CoreContracts">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.CoreContracts.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Library.CoreContracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Library.CoreContracts.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Library.DataContracts">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.DataContracts.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Library.DataContracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Library.DataContracts.dll</HintPath>
     </Reference>
-    <Reference Include="CodeFiction.Stack.Library.ServiceContracts">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\CodeFiction.Stack.Library.ServiceContracts.dll</HintPath>
+    <Reference Include="CodeFiction.Stack.Library.ServiceContracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\CodeFiction.Stack.Library.ServiceContracts.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Interception">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
-      <HintPath>..\packages\Codefiction.Stack.0.1\lib\net40\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Codefiction.Stack.0.2\lib\net40\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -100,6 +119,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessPrivateWrapper.cs" />
     <Compile Include="ApplicationContextManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ControllerFactoryExtensions.cs" />
@@ -109,13 +129,13 @@
     <Compile Include="Web\AcmMethodDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{8D67346E-E642-4239-9D6C-BBCCED964DE1}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

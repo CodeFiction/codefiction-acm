@@ -1,42 +1,52 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.SessionState;
-
+using Castle.Windsor;
 using CodeFiction.Acm.ApplicationContextManaging.Utils;
 using CodeFiction.Acm.Contracts;
 
+using IDependencyResolver = CodeFiction.Stack.Library.CoreContracts.IDependencyResolver;
+
 namespace CodeFiction.Acm.ApplicationContextManaging.Web
 {
-    public class AcmControllerFactory : IAcmControllerFactory
+    public class AcmControllerFactory : DefaultControllerFactory, IAcmControllerFactory
     {
-        public event AcmContextEventHandler OnControllerCreation;
-        public event EventHandler OnControllerCreated;
+        private readonly IDependencyResolver _dependencyResolver;
+        private readonly IApplicationContextManager _applicationContextManager;
 
-        public IController CreateController(RequestContext requestContext, string controllerName)
+        public AcmControllerFactory(IDependencyResolver dependencyResolver, IApplicationContextManager applicationContextManager)
         {
-            ApplicationContext applicationContext =
-                OnOnControllerCreationHandler(new AcmEventArgs
-                    {ControllerName = controllerName, RequestContext = requestContext});
+            _dependencyResolver = dependencyResolver;
+            _applicationContextManager = applicationContextManager;
+        }
+
+        protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
+        {
+            _applicationContextManager.Initialize();
+            _applicationContextManager.LoadStories();
+
+
+            ApplicationContext applicationContext = _applicationContextManager.ApplicationContext;
 
             if (applicationContext == null)
             {
                 //TODO: throw exception
             }
 
-            AcmController controller = null;
-
             if (requestContext.HasStory())
             {
-                controller = new AcmController(applicationContext)
-                    {
-                        ActionInvoker = new AcmActionInvoker(applicationContext)
-                    };
+                var acmController = new AcmController(applicationContext)
+                {
+                    ActionInvoker = new AcmActionInvoker(applicationContext)
+                };
+
+                return acmController;
             }
 
-            OnControllerCreatedEventHandler(EventArgs.Empty);
-
-            return controller;
+            return _dependencyResolver.Resolve<IController>(controllerType.Name);
         }
 
         public SessionStateBehavior GetControllerSessionBehavior(RequestContext requestContext, string controllerName)
@@ -44,35 +54,17 @@ namespace CodeFiction.Acm.ApplicationContextManaging.Web
             return SessionStateBehavior.Default;
         }
 
-        public void ReleaseController(IController controller)
+        public override void ReleaseController(IController controller)
         {
-            var disposable = controller as IDisposable;
-            if (disposable != null)
+            try
             {
-                disposable.Dispose();
+                _dependencyResolver.TearDown(controller);
             }
-        }
-
-        private ApplicationContext OnOnControllerCreationHandler(AcmEventArgs e)
-        {
-            ApplicationContext applicationContext = null;
-
-            AcmContextEventHandler handler = OnControllerCreation;
-            if (handler != null)
+            catch (Exception)
             {
-                applicationContext = handler(this, e);
+                // TODO: throw exception
+                throw;
             }
-
-            return applicationContext;
-        }
-
-        private void OnControllerCreatedEventHandler(EventArgs e)
-        {
-            EventHandler handler = OnControllerCreated;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-        }
+        } 
     }
 }
